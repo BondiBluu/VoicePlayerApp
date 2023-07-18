@@ -205,6 +205,7 @@
             this.pomLink.TabIndex = 13;
             this.pomLink.TabStop = true;
             this.pomLink.Text = "Pomfiore";
+            this.pomLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.pomLink_LinkClicked);
             // 
             // Form2
             // 

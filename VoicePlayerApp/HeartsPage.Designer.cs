@@ -42,7 +42,7 @@
             // 
             this.heartslabyulBox.Location = new System.Drawing.Point(12, 12);
             this.heartslabyulBox.Name = "heartslabyulBox";
-            this.heartslabyulBox.Size = new System.Drawing.Size(20, 16);
+            this.heartslabyulBox.Size = new System.Drawing.Size(442, 234);
             this.heartslabyulBox.TabIndex = 0;
             this.heartslabyulBox.TabStop = false;
             // 
@@ -98,11 +98,11 @@
             // 
             // heartsTextBox
             // 
-            this.heartsTextBox.Location = new System.Drawing.Point(380, 12);
+            this.heartsTextBox.Location = new System.Drawing.Point(460, 12);
             this.heartsTextBox.Multiline = true;
             this.heartsTextBox.Name = "heartsTextBox";
             this.heartsTextBox.ReadOnly = true;
-            this.heartsTextBox.Size = new System.Drawing.Size(399, 299);
+            this.heartsTextBox.Size = new System.Drawing.Size(319, 299);
             this.heartsTextBox.TabIndex = 7;
             this.heartsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
