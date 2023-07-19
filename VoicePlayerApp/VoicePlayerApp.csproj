@@ -102,6 +102,9 @@
     <Compile Include="ScarPage.Designer.cs">
       <DependentUpon>ScarPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DiaPage.resx">
+      <DependentUpon>DiaPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +113,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HeartsPage.resx">
       <DependentUpon>HeartsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IgniPage.resx">
+      <DependentUpon>IgniPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OctPage.resx">
+      <DependentUpon>OctPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PomPage.resx">
+      <DependentUpon>PomPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,6 +134,9 @@
     </Compile>
     <EmbeddedResource Include="SavPage.resx">
       <DependentUpon>SavPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScarPage.resx">
+      <DependentUpon>ScarPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
