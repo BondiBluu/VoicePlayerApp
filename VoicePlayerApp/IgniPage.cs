@@ -13,16 +13,18 @@ namespace VoicePlayerApp
 {
     public partial class IgniPage : Form
     {
-        PictureBox ignihydeBox = new PictureBox();
-        TextBox igniTextBox = new TextBox();
+        AllSchools allSchools;
+        //PictureBox ignihydeBox = new PictureBox();
+        //TextBox igniTextBox = new TextBox();
         Button idiaButton = new Button();
         Button orthoButton = new Button();
 
-        public IgniPage()
+        public IgniPage(AllSchools allSchools)
         {
             InitializeComponent();
-            DisplayPictureBox();
-            DisplayButtons();
+            //DisplayPictureBox();
+            //DisplayButtons();
+            this.allSchools = allSchools;
         }
 
         private void IgniPage_Load(object sender, EventArgs e)
@@ -30,7 +32,27 @@ namespace VoicePlayerApp
 
         }
 
-        private void DisplayButtons()
+        public List<Button> GetButtons()
+        {
+            List<Button> buttons = new List<Button>();
+
+            Button idiaButton = new Button();
+            idiaButton.Location = new Point(75, 317);
+            idiaButton.Text = "Idia";
+            idiaButton.Click += idiaButton_Click;
+            buttons.Add(idiaButton);
+
+
+            Button orthoButton = new Button();
+            orthoButton.Location = new Point(290, 317);
+            orthoButton.Text = "Ortho";
+            orthoButton.Click += orthoButton_Click;
+            buttons.Add(orthoButton);
+
+            return buttons;
+        }
+
+        /*private void DisplayButtons()
         {
             idiaButton.Location = new Point(75, 317);
             idiaButton.Text = "Idia";
@@ -61,22 +83,22 @@ namespace VoicePlayerApp
 
             this.Controls.Add(ignihydeBox);
             this.Controls.Add(igniTextBox);
-        }
+        }*/
 
         private void idiaButton_Click(object sender, EventArgs e)
         {
             string idiaInfo = File.ReadAllText(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Ignihyde\IgniTextFiles\IdiaInfo.txt");
-            igniTextBox.Text = idiaInfo;
+            allSchools.textBox.Text = idiaInfo;
 
-            ignihydeBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Ignihyde\IgniPhotos\Idia.png");
+            allSchools.pictureBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Ignihyde\IgniPhotos\Idia.png");
         }
 
         private void orthoButton_Click(object sender, EventArgs e)
         {
             string orthoInfo = File.ReadAllText(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Ignihyde\IgniTextFiles\OrthoInfo.txt");
-            igniTextBox.Text = orthoInfo;
+            allSchools.textBox.Text = orthoInfo;
 
-            ignihydeBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Ignihyde\IgniPhotos\Ortho.png");
+            allSchools.pictureBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Ignihyde\IgniPhotos\Ortho.png");
         }
     }
 }

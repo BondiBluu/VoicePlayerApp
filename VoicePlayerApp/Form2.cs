@@ -59,46 +59,46 @@ namespace VoicePlayerApp
 
         private void heartsLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            HeartsPage heartsPage = new HeartsPage();
-            heartsPage.Show();
+            //HeartsPage heartsPage = new HeartsPage();
+            //heartsPage.Show();
         }
 
         private void savLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            SavPage savPage = new SavPage();
-            savPage.Show();
+            //SavPage savPage = new SavPage();
+            //savPage.Show();
         }
 
         private void octLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OctPage octPage = new OctPage();
-            octPage.Show();
+            //OctPage octPage = new OctPage();
+            //octPage.Show();
         }
 
         private void scaraLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ScarPage scarPage = new ScarPage();
-            scarPage.Show();
+            //ScarPage scarPage = new ScarPage();
+            //scarPage.Show();
         }
 
 
 
         private void igLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IgniPage igniPage = new IgniPage();
-            igniPage.Show();
+            //IgniPage igniPage = new IgniPage();
+            //igniPage.Show();
         }
 
         private void diaLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            DiaPage diaPage = new DiaPage();
-            diaPage.Show();
+            //DiaPage diaPage = new DiaPage();
+            //diaPage.Show();
         }
 
         private void pomLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PomPage pomPage = new PomPage();
-            pomPage.Show();
+            //PomPage pomPage = new PomPage();
+            //pomPage.Show();
         }
     }
 }

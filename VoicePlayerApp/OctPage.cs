@@ -13,17 +13,16 @@ namespace VoicePlayerApp
 {
     public partial class OctPage : Form
     {
+        AllSchools allSchools;
         PictureBox octavinelleBox = new PictureBox();
         TextBox octTextBox = new TextBox();
-        Button azulButton = new Button();
-        Button jadeButton = new Button();
-        Button floydButton = new Button();
 
-        public OctPage()
+        public OctPage(AllSchools allSchools)
         {
             InitializeComponent();
-            DisplayButtons();
-            DisplayPictureBox();
+            //DisplayButtons();
+            //DisplayPictureBox();
+            this.allSchools = allSchools;
         }
 
         private void OctPage_Load(object sender, EventArgs e)
@@ -31,7 +30,34 @@ namespace VoicePlayerApp
 
         }
 
-        private void DisplayButtons()
+        public List<Button> GetButtons()
+        {
+            List<Button> buttons = new List<Button>();
+
+
+            Button azulButton = new Button();
+            azulButton.Location = new Point(12, 317);
+            azulButton.Text = "Azul";
+            azulButton.Click += azulButton_Click;
+            //adding the button after modification
+            buttons.Add(azulButton);
+
+            Button jadeButton = new Button();
+            jadeButton.Location = new Point(191, 317);
+            jadeButton.Text = "Jade";
+            jadeButton.Click += jadeButton_Click;
+            buttons.Add(jadeButton);
+
+            Button floydButton = new Button();
+            floydButton.Location = new Point(370, 317);
+            floydButton.Text = "Floyd";
+            floydButton.Click += floydButton_Click;
+            buttons.Add(floydButton);
+
+
+            return buttons;
+        }
+        /*private void DisplayButtons()
         {
             azulButton.Location = new Point(12, 317);
             azulButton.Text = "Azul";
@@ -51,7 +77,7 @@ namespace VoicePlayerApp
             jadeButton.Click += jadeButton_Click;
             floydButton.Click += floydButton_Click;
 
-        }
+        }*/
 
         private void DisplayPictureBox()
         {
@@ -73,25 +99,25 @@ namespace VoicePlayerApp
         private void azulButton_Click(object sender, EventArgs e)
         {
             string azulInfo = File.ReadAllText(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Octavinelle\OctTextFiles\AzulInfo.txt");
-            octTextBox.Text = azulInfo;
+            allSchools.textBox.Text = azulInfo;
 
-            octavinelleBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Octavinelle\OctPhotos\Azul.png");
+            allSchools.pictureBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Octavinelle\OctPhotos\Azul.png");
         }
 
         private void jadeButton_Click(object sender, EventArgs e)
         {
             string jadeInfo = File.ReadAllText(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Octavinelle\OctTextFiles\JadeInfo.txt");
-            octTextBox.Text = jadeInfo;
+            allSchools.textBox.Text = jadeInfo;
 
-            octavinelleBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Octavinelle\OctPhotos\Jade.png");
+            allSchools.pictureBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Octavinelle\OctPhotos\Jade.png");
         }
 
         private void floydButton_Click(object sender, EventArgs e)
         {
             string floydInfo = File.ReadAllText(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Octavinelle\OctTextFiles\FloydInfo.txt");
-            octTextBox.Text = floydInfo;
+            allSchools.textBox.Text = floydInfo;
 
-            octavinelleBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Octavinelle\OctPhotos\Floyd.png");
+            allSchools.pictureBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Octavinelle\OctPhotos\Floyd.png");
         }
     }
 }

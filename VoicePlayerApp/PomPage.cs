@@ -13,17 +13,19 @@ namespace VoicePlayerApp
 {
     public partial class PomPage : Form
     {
+        AllSchools allSchools;
         PictureBox pomfioreBox = new PictureBox();
         TextBox pomTextBox = new TextBox();
-        Button vilButton = new Button();
-        Button rookButton = new Button();
-        Button epelButton = new Button();
+        //Button vilButton = new Button();
+        //Button rookButton = new Button();
+        //Button epelButton = new Button();
 
-        public PomPage()
+        public PomPage(AllSchools allSchools)
         {
             InitializeComponent();
-            DisplayPictureBox();
-            DisplayButtons();
+            //DisplayPictureBox();
+            //DisplayButtons();
+            this.allSchools = allSchools;
         }
 
         private void PomPage_Load(object sender, EventArgs e)
@@ -31,7 +33,33 @@ namespace VoicePlayerApp
 
         }
 
-        private void DisplayButtons()
+        public List<Button> GetButtons()
+        {
+            List<Button> buttons = new List<Button>();
+
+            Button vilButton = new Button();
+            vilButton.Location = new Point(12, 317);
+            vilButton.Text = "Vil";
+            vilButton.Click += vilButton_Click;
+            buttons.Add(vilButton);
+
+
+            Button rookButton = new Button();
+            rookButton.Location = new Point(191, 317);
+            rookButton.Text = "Rook";
+            rookButton.Click += rookButton_Click;
+            buttons.Add(rookButton);
+
+            Button epelButton = new Button();
+            epelButton.Location = new Point(370, 317);
+            epelButton.Text = "Epel";
+            epelButton.Click += epelButton_Click;
+            buttons.Add(epelButton);
+
+            return buttons;
+        }
+
+        /*private void DisplayButtons()
         {
             vilButton.Location = new Point(12, 317);
             vilButton.Text = "Vil";
@@ -68,30 +96,30 @@ namespace VoicePlayerApp
 
             this.Controls.Add(pomfioreBox);
             this.Controls.Add(pomTextBox);
-        }
+        }*/
 
         private void vilButton_Click(object sender, EventArgs e)
         {
             string vilInfo = File.ReadAllText(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Pomfiore\PomTextFiles\VilInfo.txt");
-            pomTextBox.Text = vilInfo;
+            allSchools.textBox.Text = vilInfo;
 
-            pomfioreBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Pomfiore\PomPhotos\Vil.png");
+            allSchools.pictureBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Pomfiore\PomPhotos\Vil.png");
         }
 
         private void rookButton_Click(object sender, EventArgs e)
         {
             string rookInfo = File.ReadAllText(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Pomfiore\PomTextFiles\RookInfo.txt");
-            pomTextBox.Text = rookInfo;
+            allSchools.textBox.Text = rookInfo;
 
-            pomfioreBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Pomfiore\PomPhotos\Rook.png");
+            allSchools.pictureBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Pomfiore\PomPhotos\Rook.png");
         }
 
         private void epelButton_Click(object sender, EventArgs e)
         {
             string epelInfo = File.ReadAllText(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Pomfiore\PomTextFiles\EpelInfo.txt");
-            pomTextBox.Text = epelInfo;
+            allSchools.textBox.Text = epelInfo;
 
-            pomfioreBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Pomfiore\PomPhotos\Epel.png");
+            allSchools.pictureBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Pomfiore\PomPhotos\Epel.png");
         }
     }
 }

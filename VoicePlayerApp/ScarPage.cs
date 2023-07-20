@@ -13,16 +13,18 @@ namespace VoicePlayerApp
 {
     public partial class ScarPage : Form
     {
-        PictureBox scarabiaBox = new PictureBox();
-        TextBox scarTextBox = new TextBox();
-        Button kalimButton = new Button();
-        Button jamilButton = new Button();
+        AllSchools allSchools;
+        //PictureBox scarabiaBox = new PictureBox();
+        //TextBox scarTextBox = new TextBox();
+        //Button kalimButton = new Button();
+        //Button jamilButton = new Button();
 
-        public ScarPage()
+        public ScarPage(AllSchools allSchools)
         {
             InitializeComponent();
-            DisplayPictureBox();
-            DisplayButtons();
+            //DisplayPictureBox();
+            //DisplayButtons();
+            this.allSchools = allSchools;
         }
 
         private void ScarPage_Load(object sender, EventArgs e)
@@ -30,7 +32,27 @@ namespace VoicePlayerApp
 
         }
 
-        private void DisplayButtons()
+        public List<Button> GetButtons()
+        {
+            List<Button> buttons = new List<Button>();
+
+            Button kalimButton = new Button();
+            kalimButton.Location = new Point(75, 317);
+            kalimButton.Text = "Kalim";
+            kalimButton.Click += kalimButton_Click;
+            buttons.Add(kalimButton);
+
+
+            Button jamilButton = new Button();
+            jamilButton.Location = new Point(290, 317);
+            jamilButton.Text = "Jamil";
+            jamilButton.Click += jamilButton_Click;
+            buttons.Add(jamilButton);
+
+            return buttons;
+        }
+
+        /*private void DisplayButtons()
         {
             kalimButton.Location = new Point(75, 317);
             kalimButton.Text = "Kalim";
@@ -61,22 +83,22 @@ namespace VoicePlayerApp
 
             this.Controls.Add(scarabiaBox);
             this.Controls.Add(scarTextBox);
-        }
+        }*/
 
         private void kalimButton_Click(object sender, EventArgs e)
         {
             string kalimInfo = File.ReadAllText(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Scarabia\ScarTextFiles\KalimInfo.txt");
-            scarTextBox.Text = kalimInfo;
+            allSchools.textBox.Text = kalimInfo;
 
-            scarabiaBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Scarabia\ScarPhotos\Kalim.png");
+            allSchools.pictureBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Scarabia\ScarPhotos\Kalim.png");
         }
 
         private void jamilButton_Click(object sender, EventArgs e)
         {
             string jamilInfo = File.ReadAllText(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Scarabia\ScarTextFiles\JamilInfo.txt");
-            scarTextBox.Text = jamilInfo;
+            allSchools.textBox.Text = jamilInfo;
 
-            scarabiaBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Scarabia\ScarPhotos\Jamil.png");
+            allSchools.pictureBox.Image = Image.FromFile(@"C:\Users\bamid\source\repos\VoicePlayerApp\VoicePlayerApp\Scarabia\ScarPhotos\Jamil.png");
         }
     }
 }

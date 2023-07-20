@@ -24,9 +24,12 @@ namespace VoicePlayerApp
 
         private void formTwoCharactersLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form2 characterPage = new Form2();
-            characterPage.Show();
-            this.Hide();
+            //Form2 characterPage = new Form2();
+            //characterPage.Show();
+
+            AllSchools allSchools = new AllSchools();
+            allSchools.Show();
+            //this.Hide();
         }
     }
 }
